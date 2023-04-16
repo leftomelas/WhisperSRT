@@ -33,7 +33,7 @@ class Transcribe:
         self.whisper_model = None
         self.vad_model = None
         self.detect_speech = None
-        self.translator = DeeplApi(api_key=os.environ.get("DEEPL_API_KEY"))
+        #self.translator = DeeplApi(api_key=os.environ.get("DEEPL_API_KEY"))
 
     def run(self):
         for input in self.args.inputs:
@@ -63,7 +63,7 @@ class Transcribe:
 
         output = name + ".srt"
         self._save_srt(output, transcribe_results)
-        self.translate(output)
+        #self.translate(output)
 
         logging.info(f"Transcribed {file} to {output}")
 
